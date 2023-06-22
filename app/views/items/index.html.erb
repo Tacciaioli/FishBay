@@ -1,0 +1,29 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://external-preview.redd.it/lS15HBEbnBjBnAHpKJ2-CrMylW1sNSA0KJ7gDcg5ADk.jpg?auto=webp&s=1754f6602a1bf91485fdedb2b7c5c5708b38e10b);">
+  <div class="container">
+    <h1>Fish anywhere!</h1>
+    <p>Change your life, learn to fish.</p>
+  </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% @items.each do |item| %>
+  <div class="col">
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= item.name %></h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= item.brand %></li>
+        <li class="list-group-item"><%= item.size %></li>
+        <li class="list-group-item"><%= item.year %></li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">Comprar</a>
+        <a href="#" class="card-link">Mais info</a>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

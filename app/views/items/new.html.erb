@@ -1,0 +1,27 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://external-preview.redd.it/lS15HBEbnBjBnAHpKJ2-CrMylW1sNSA0KJ7gDcg5ADk.jpg?auto=webp&s=1754f6602a1bf91485fdedb2b7c5c5708b38e10b);">
+  <div class="container">
+    <h1>Fish anywhere!</h1>
+    <p>Change your life, learn to fish.</p>
+  </div>
+</div>
+
+<div>
+  <%= simple_form_for [@item] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :brand %>
+    <%= f.input :weight %>
+    <%= f.input :size %>
+    <%= f.input :year %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <br>
+  <%= f.submit class: "btn btn-reserve" %>
+  <% end %>
+  <%= link_to 'Cancel', items_path, class: "btn btn-reserve1" %>
+</div>
+
+<%# name"
+    t.string "brand"
+    t.float "weight"
+    t.float "size"
+    t.text "description" %>
