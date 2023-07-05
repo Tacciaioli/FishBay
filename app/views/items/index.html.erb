@@ -8,16 +8,17 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <% @items.each do |item| %>
   <div class="col">
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
+    <div class="card" style="width: 18rem; ">
+      <%# <img src="" class="card-img-top" alt="..."> %>
+      <img style="height: 150px; object-fit: cover; object-position: center" class="card-img-top" src="<%= cl_image_path item.photo.key %>" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title"><%= item.name %></h5>
         <p class="card-text"><%= item.description %></p>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><%= item.brand %></li>
-        <li class="list-group-item"><%= item.size %></li>
-        <li class="list-group-item"><%= item.year %></li>
+        <li class="list-group-item"><span>Size: </span><%= item.size %> Meters</li>
+        <li class="list-group-item"><span>Price: </span><%= item.price %>€/K</li>
       </ul>
       <div class="card-body">
         <a href="#" class="card-link">Comprar</a>
