@@ -12,6 +12,11 @@ class ItemsController < ApplicationController
     end
   end
 
+  def user_index
+    @items = Item.all
+    @items = @items.where(user_id: current_user)
+  end
+
   def new
     @item = Item.new
   end
@@ -19,7 +24,6 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user = current_user
-
     if @item.save
       redirect_to items_path
     else
