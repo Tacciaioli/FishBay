@@ -21,6 +21,12 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to my_items_path, status: :see_other
+  end
+
   def create
     @item = Item.new(item_params)
     @item.user = current_user
