@@ -17,9 +17,9 @@
         <li class="list-group-item"><%= @item.brand %></li>
         <li class="list-group-item"><span>Size: </span><%= @item.updated_at %> Meters</li>
         <li class="list-group-item"><span>Price: </span><%= @item.price %>€/K</li>
+        <li class="list-group-item"><span><%= @item.user.first_name %> <%= @item.user.last_name %></span></li>
       </ul>
       <div class="card-body">
-        <%# <a href="#" class="card-link">Editar</a> %>
         <%= link_to "https://wa.me/+351#{@item.user.phone_number}/?text=Ola", class: "item-card-button" do %>
           <%= image_tag("whatsapp.svg", width: 25) %> Contactar
         <% end %>
