@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = Item.all
@@ -12,6 +13,9 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def user_index
     @items = Item.all
     @items = @items.where(user_id: current_user)
@@ -22,7 +26,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
     redirect_to my_items_path, status: :see_other
   end
@@ -41,6 +44,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :brand, :weight, :size, :year, :description, :price, :photo )
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end

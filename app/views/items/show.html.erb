@@ -1,0 +1,29 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://external-preview.redd.it/lS15HBEbnBjBnAHpKJ2-CrMylW1sNSA0KJ7gDcg5ADk.jpg?auto=webp&s=1754f6602a1bf91485fdedb2b7c5c5708b38e10b);">
+  <div class="container">
+    <h1>Fish anywhere!</h1>
+    <p>Change your life, learn to fish.</p>
+  </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card" style="width: 18rem; ">
+      <img style="height: 150px; object-fit: cover; object-position: center" class="card-img-top" src="<%= cl_image_path @item.photo.key %>" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= @item.name %></h5>
+        <p class="card-text"><%= @item.description %></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= @item.brand %></li>
+        <li class="list-group-item"><span>Size: </span><%= @item.updated_at %> Meters</li>
+        <li class="list-group-item"><span>Price: </span><%= @item.price %>€/K</li>
+      </ul>
+      <div class="card-body">
+        <%# <a href="#" class="card-link">Editar</a> %>
+        <%= link_to "https://wa.me/+351#{@item.user.phone_number}/?text=Ola", class: "item-card-button" do %>
+          <%= image_tag("whatsapp.svg", width: 25) %> Contactar
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
