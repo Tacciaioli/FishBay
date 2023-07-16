@@ -15,9 +15,11 @@
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><%= @item.brand %></li>
-        <li class="list-group-item"><span>Size: </span><%= @item.updated_at %> Meters</li>
+        <li class="list-group-item"><%= @item.updated_at %></li>
         <li class="list-group-item"><span>Price: </span><%= @item.price %>€/K</li>
-        <li class="list-group-item"><span><%= @item.user.first_name %> <%= @item.user.last_name %></span></li>
+        <%= link_to user_page_path(@item.user) do%>
+          <li class="list-group-item"><span><%= @item.user.first_name %> <%= @item.user.last_name %></span></li>
+        <% end %>
       </ul>
       <div class="card-body">
         <%= link_to "https://wa.me/+351#{@item.user.phone_number}/?text=Ola", class: "item-card-button" do %>

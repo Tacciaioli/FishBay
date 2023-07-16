@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :items
   get "/my_items", to: "items#user_index"
+  get "/user_page", to: "items#user_page"
 end

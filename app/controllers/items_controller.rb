@@ -21,6 +21,13 @@ class ItemsController < ApplicationController
     @items = @items.where(user_id: current_user)
   end
 
+  def user_page
+    @items = Item.all
+    @user = User.find(params[:format])
+    @items = @items.where(user_id: @user)
+
+  end
+
   def new
     @item = Item.new
   end

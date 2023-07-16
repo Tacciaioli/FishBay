@@ -1,20 +1,14 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://external-preview.redd.it/lS15HBEbnBjBnAHpKJ2-CrMylW1sNSA0KJ7gDcg5ADk.jpg?auto=webp&s=1754f6602a1bf91485fdedb2b7c5c5708b38e10b);">
   <div class="container">
-    <h1>Fish anywhere!</h1>
-    <p>Change your life, learn to fish.</p>
+    <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+    <p></p>
     <div class="row justify-content-left">
       <div class="col-sm-4 my-3">
-        <%= form_with url: items_path, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search for: Name, Category, Location"
-          %>
-          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-        <% end %>
+
       </div>
     </div>
   </div>
+  <%= cl_image_tag @user.photo.key, class: "page-avatar" %>
 </div>
 
 <div class="row row-cols-1 row-cols-md-3">
