@@ -21,7 +21,6 @@
       </ul>
       <div class="card-body">
         <a href="#" class="card-link">Editar</a>
-        <%# <a href="#" class="card-link">Remover</a> %>
         <%= link_to "Remover", item_path(item), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
       </div>
     </div>

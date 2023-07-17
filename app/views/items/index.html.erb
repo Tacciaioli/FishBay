@@ -19,27 +19,21 @@
 
 <div class="row row-cols-1 row-cols-md-3">
   <% @items.each do |item| %>
-    <%= link_to item_path(item), style:"text-decoration: none; color: black" do %>
-      <div class="col">
-        <div class="card" style="width: 18rem; ">
-          <%# <img src="" class="card-img-top" alt="..."> %>
+    <div class="col">
+      <div class="card" style="width: 18rem; ">
+        <%= link_to item_path(item), style:"text-decoration: none; color: black" do %>
           <img style="height: 150px; object-fit: cover; object-position: center" class="card-img-top" src="<%= cl_image_path item.photo.key %>" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title"><%= item.name %></h5>
             <p class="card-text"><%= item.description %></p>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><%= item.brand %></li>
-            <li class="list-group-item"><span>Size: </span><%= item.size %> Meters</li>
-            <li class="list-group-item"><span>Price: </span><%= item.price %>€/K</li>
-
-          </ul>
-          <%# <div class="card-body">
-            <a href="#" class="card-link">Comprar</a>
-            <a href="#" class="card-link">Mais info</a>
-          </div> %>
-        </div>
+        <% end %>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= item.brand %></li>
+          <li class="list-group-item"><span>Size: </span><%= item.size %> Meters</li>
+          <li class="list-group-item"><span>Price: </span><%= item.price %>€/K</li>
+        </ul>
       </div>
-    <% end %>
+    </div>
   <% end %>
 </div>
